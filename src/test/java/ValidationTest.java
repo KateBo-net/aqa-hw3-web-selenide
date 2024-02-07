@@ -65,6 +65,8 @@ public class ValidationTest {
     void shouldNotPassValidationLatinName() {
         open("http://localhost:9999/");
         $("[data-test-id=name] input").setValue("Bob");
+        $("[data-test-id=phone] input").setValue("+79820000000");
+        $("[data-test-id=agreement] span.checkbox__text").click();
         $(".form-field button").click();
         $("[data-test-id=name].input_invalid").shouldHave(text("Имя и Фамилия указаные неверно. Допустимы только русские буквы, пробелы и дефисы."));
     }
@@ -73,6 +75,8 @@ public class ValidationTest {
     void shouldNotPassValidationSpecialCharName() {
         open("http://localhost:9999/");
         $("[data-test-id=name] input").setValue("Иван(:");
+        $("[data-test-id=phone] input").setValue("+79820000000");
+        $("[data-test-id=agreement] span.checkbox__text").click();
         $(".form-field button").click();
         $("[data-test-id=name].input_invalid").shouldHave(text("Имя и Фамилия указаные неверно. Допустимы только русские буквы, пробелы и дефисы."));
     }
@@ -81,6 +85,8 @@ public class ValidationTest {
     void shouldNotPassValidationNumberName() {
         open("http://localhost:9999/");
         $("[data-test-id=name] input").setValue("Иван77");
+        $("[data-test-id=phone] input").setValue("+79820000000");
+        $("[data-test-id=agreement] span.checkbox__text").click();
         $(".form-field button").click();
         $("[data-test-id=name].input_invalid").shouldHave(text("Имя и Фамилия указаные неверно. Допустимы только русские буквы, пробелы и дефисы."));
     }

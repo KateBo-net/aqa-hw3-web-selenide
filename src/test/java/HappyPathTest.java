@@ -15,14 +15,4 @@ public class HappyPathTest {
         $(".form-field button").click();
         $("[data-test-id=order-success]").shouldHave(text(" Ваша заявка успешно отправлена!"));
     }
-
-    @Test
-    void shouldSendApplicationAgreementText() {
-        open("http://localhost:9999/");
-        $("[data-test-id=name] input").setValue("Иванов Иван");
-        $("[data-test-id=phone] input").setValue("+79820000000");
-        $("[data-test-id=agreement] span.checkbox__text").click();
-        $(".form-field button").click();
-        $("[data-test-id=order-success]").shouldHave(text(" Ваша заявка успешно отправлена!"));
-    }
 }

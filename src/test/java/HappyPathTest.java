@@ -15,5 +15,4 @@ public class HappyPathTest {
         $(".form-field button").click();
         $("[data-test-id=order-success]").shouldHave(text(" Ваша заявка успешно отправлена!"));
     }
-
 }
